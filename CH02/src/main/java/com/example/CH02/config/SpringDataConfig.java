@@ -20,7 +20,7 @@ public class SpringDataConfig {
     @Bean
     public DataSource dataSource() {
         var datasource = new DriverManagerDataSource();
-        datasource.setDriverClassName("com.mysql.jc.jdbc.Driver");
+        datasource.setDriverClassName("com.mysql.cj.jdbc.Driver");
         datasource.setUrl("jdbc:mysql://localhost:3306/CH02?serverTimezone=UTC");
         datasource.setUsername("springstudent");
         datasource.setPassword("springstudent");

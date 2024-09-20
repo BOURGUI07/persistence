@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: CH04
+  datasource:
+    url: jdbc:mysql://localhost:3306/CH04_SPRINGDATAJPA?serverTimezone=UTC
+    username: springstudent
+    password: springstudent
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+    show-sql: true
+    hibernate:
+      ddl-auto: create

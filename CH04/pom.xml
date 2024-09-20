@@ -5,46 +5,40 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.7.18</version>
+		<version>3.3.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>CH02</artifactId>
+	<artifactId>CH04</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>CH02</name>
+	<name>CH04</name>
 	<description>Demo project for Spring Boot</description>
+	<url/>
+	<licenses>
+		<license/>
+	</licenses>
+	<developers>
+		<developer/>
+	</developers>
+	<scm>
+		<connection/>
+		<developerConnection/>
+		<tag/>
+		<url/>
+	</scm>
 	<properties>
-		<java.version>17</java.version>
+		<java.version>22</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
+
 		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-entitymanager</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>javax.validation</groupId>
-			<artifactId>validation-api</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>javax.xml.bind</groupId>
-			<artifactId>jaxb-api</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.glassfish.jaxb</groupId>
-			<artifactId>jaxb-runtime</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>8.0.29</version>
+			<groupId>com.mysql</groupId>
+			<artifactId>mysql-connector-j</artifactId>
+			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
@@ -74,4 +68,5 @@
 			</plugin>
 		</plugins>
 	</build>
+
 </project>
