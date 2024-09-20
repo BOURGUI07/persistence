@@ -12,3 +12,5 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: create
+      naming:
+        physical-strategy: com.example.CH04.namingStrategy.CENamingStrategy
