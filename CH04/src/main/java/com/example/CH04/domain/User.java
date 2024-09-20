@@ -13,6 +13,8 @@ import org.hibernate.annotations.GenericGenerator;
 import org.springframework.data.jpa.convert.threeten.Jsr310JpaConverters;
 
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @NoArgsConstructor
@@ -43,6 +45,9 @@ public class User {
     @AttributeOverride(name="city.name", column = @Column(name="BILLING_CITY"))
     @AttributeOverride(name="city.country", column = @Column(name="BILLING_COUNTRY"))
     private Address billingAddress;
+
+    @OneToMany(mappedBy="user")
+    private Set<BillingDetails> billingDetails = new HashSet<>();
 
 
 }

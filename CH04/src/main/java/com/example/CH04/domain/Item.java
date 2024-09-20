@@ -75,6 +75,9 @@ public class Item {
     @Column(name="PRICE",length = 63,nullable = false)
     private MonetaryAmount buyNowPrice;
 
+    private Dimensions dimensions;
+    private Weight weight;
+
 
     public void setName(String name){
         this.name = name.startsWith("AUCTION: ")? name: "AUCTION: " + name;
