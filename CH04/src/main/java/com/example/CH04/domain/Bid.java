@@ -2,7 +2,10 @@ package com.example.CH04.domain;
 
 import jakarta.persistence.*;
 import lombok.Getter;
+import org.hibernate.annotations.Formula;
 import org.hibernate.annotations.Immutable;
+
+import java.math.BigDecimal;
 
 @Entity
 @Immutable
@@ -12,5 +15,8 @@ public class Bid {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @ManyToOne(fetch = FetchType.LAZY)
     private Item item;
+
+
 }

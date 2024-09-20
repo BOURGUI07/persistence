@@ -17,13 +17,16 @@ public class Ch04Application {
 		SpringApplication.run(Ch04Application.class, args);
 	}
 
-	@Bean
-	public ApplicationRunner init(UserRepo repo) {
-		return env -> {
-			repo.save(new User("ali", LocalDate.of(2020, Month.JANUARY,18)));
-			repo.save(new User("omar", LocalDate.of(2020, Month.AUGUST,3)));
-			repo.findAll().forEach(System.out::println);
-		};
+	/*
+			@Bean
+			public ApplicationRunner init(UserRepo repo) {
+				return env -> {
+				repo.save(new User("ali", LocalDate.of(2020, Month.JANUARY,18)));
+				repo.save(new User("omar", LocalDate.of(2020, Month.AUGUST,3)));
+				repo.findAll().forEach(System.out::println);
+			};
 	}
+	 */
+
 
 }

@@ -1,5 +1,6 @@
 package com.example.CH04.domain;
 
+import com.example.CH04.Util.ZipcodeConverter;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Data;
@@ -9,6 +10,7 @@ import lombok.experimental.Accessors;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 import org.hibernate.annotations.GenericGenerator;
+import org.springframework.data.jpa.convert.threeten.Jsr310JpaConverters;
 
 import java.time.LocalDate;
 
@@ -26,13 +28,21 @@ public class User {
     private Long id;
 
     private String username;
+    private String firstname;
+    private String lastname;
     private LocalDate registrationDate;
     private String email;
     private int level;
     private boolean active;
+    @Convert(converter = ZipcodeConverter.class,
+    attributeName = "city.zipCode")
+    private Address homeAddress;
+    @Embedded
+    @AttributeOverride(name="street", column = @Column(name="BILLING_STREET"))
+    @AttributeOverride(name="city.zipCode", column = @Column(name="BILLING_ZIPCODE"))
+    @AttributeOverride(name="city.name", column = @Column(name="BILLING_CITY"))
+    @AttributeOverride(name="city.country", column = @Column(name="BILLING_COUNTRY"))
+    private Address billingAddress;
 
-    public User(String name,LocalDate registrationDate) {
-        this.username = name;
-        this.registrationDate = registrationDate;
-    }
+
 }
