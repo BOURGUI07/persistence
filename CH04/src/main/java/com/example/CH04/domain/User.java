@@ -49,5 +49,7 @@ public class User {
     @OneToMany(mappedBy="user")
     private Set<BillingDetails> billingDetails = new HashSet<>();
 
-
+    @OneToOne(fetch = FetchType.LAZY,optional = false,cascade = CascadeType.ALL)
+    @PrimaryKeyJoinColumn
+    private AddressEntity shippingAddress;
 }

@@ -16,6 +16,7 @@ public class Bid {
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="ITEM_ID", nullable=false)
     private Item item;
 
 
